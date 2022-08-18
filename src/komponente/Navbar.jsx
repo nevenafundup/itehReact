@@ -1,22 +1,21 @@
- 
+import React from "react";
+import {Link} from "react-router-dom";
 
-function Navbar() {
+function Navbar({cartNum}) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="navbar">
+     
+      <Link to="/" className="navbar-items"> Ponuda  </Link>
+       
+      <Link to="/korpa" className="navbar-items">
+        <p>Korpa</p>
+         
+      </Link>
+
+      {/* <BsCartFill /> */}
+        <p className="cart-num">{cartNum}</p>
+
+        {/* <Link to="/kontakt" className="navbar-items"> Kontakiraj nas </Link> */}
     </div>
   );
 }
