@@ -6,6 +6,7 @@ import Footer from './komponente/Footer';
 import Korpa from './komponente/Korpa';
 import Ponuda from './komponente/Ponuda';
 import { useState } from 'react';
+import Kontakt from './komponente/Kontakt';
 function App() {
  
   const [cartNum,setCartNum]=useState(0)
@@ -84,6 +85,7 @@ function onRemove(id){
           <Routes>         
                <Route path="/ponuda" element={<Ponuda proizvodi={proizvodi} onAdd={onAdd} onRemove={onRemove}></Ponuda>}></Route>
                 <Route path="/korpa" element={<Korpa proizvodi={proizvodiUKorpi} onAdd={onAdd} onRemove={onRemove}></Korpa>}></Route>
+                <Route path="/kontakt" element={ <Kontakt></Kontakt>}></Route>
           </Routes>
 
 
