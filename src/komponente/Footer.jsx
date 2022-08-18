@@ -3,7 +3,8 @@ import {Link} from "react-router-dom";
 
 function Footer( ) {
   return (
-    
+    <div>
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
     <div className="page-wrapper">
          
          <footer>
@@ -65,6 +66,7 @@ function Footer( ) {
         </div>
     </div>
     </footer>
+    </div>
     </div>
   );
 }

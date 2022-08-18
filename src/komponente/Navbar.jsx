@@ -5,7 +5,7 @@ function Navbar({cartNum}) {
   return (
     <div className="navbar">
      
-      <Link to="/" className="navbar-items"> Ponuda  </Link>
+      <Link to="/ponuda" className="navbar-items"> Ponuda  </Link>
        
       <Link to="/korpa" className="navbar-items">
         <p>Korpa</p>
