@@ -8,6 +8,8 @@ import Ponuda from './komponente/Ponuda';
 import { useState } from 'react';
 function App() {
  
+  const [cartNum,setCartNum]=useState(0)
+  const [proizvodiUKorpi,setKorpa]=useState([]);
   const [proizvodi]=useState([
       {
         id:1,
@@ -50,19 +52,38 @@ function App() {
         kolicina:0
       }
   ]);
-
-
-
+function osveziKorpu(){
+  let niz = proizvodi.filter((p)=>p.kolicina>0);
+  setKorpa(niz);
+}
+function onAdd(id){
+    setCartNum(cartNum+1);
+    for(var i=0;i<proizvodi.length;i++){
+      if(proizvodi[i].id==id){
+        proizvodi[i].kolicina++;
+      }
+    }
+    osveziKorpu();
+}
+function onRemove(id){
+  setCartNum(cartNum-1);
+  for(var i=0;i<proizvodi.length;i++){
+    if(proizvodi[i].id==id && proizvodi[i].kolicina!=0 ){
+      proizvodi[i].kolicina--;
+    }
+  }
+  osveziKorpu();
+}
 
 
 
   return (
     <div  >
       <BrowserRouter className="App">
-          <Navbar cartNum={0}></Navbar>
+          <Navbar cartNum={cartNum}></Navbar>
           <Routes>         
-               <Route path="/ponuda" element={<Ponuda proizvodi={proizvodi}></Ponuda>}></Route>
-                <Route path="/korpa" element={<Korpa></Korpa>}></Route>
+               <Route path="/ponuda" element={<Ponuda proizvodi={proizvodi} onAdd={onAdd} onRemove={onRemove}></Ponuda>}></Route>
+                <Route path="/korpa" element={<Korpa proizvodi={proizvodiUKorpi} onAdd={onAdd} onRemove={onRemove}></Korpa>}></Route>
           </Routes>
 
 

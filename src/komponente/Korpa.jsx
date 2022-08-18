@@ -1,9 +1,17 @@
 import React from "react";
+import Kartica from "./Kartica";
  
 
-function Korpa() {
+function Korpa({proizvodi,onAdd,onRemove}) {
   return (
-    <p>Ovo je nasa korpa</p>
+    <div className="all-products"> 
+        {proizvodi
+            .map((p)=> <Kartica key={p.id} proizvod={p} onAdd={onAdd} onRemove={onRemove}></Kartica>)
+        }
+    
+
+</div>
+    
   );
 }
 
