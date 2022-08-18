@@ -1,10 +1,14 @@
 import React from "react";
+import Kartica from "./Kartica";
  
 
-function Ponuda() {
+function Ponuda({proizvodi}) {
   return (
-    <div>
-    <p>Ovo je nasa ponuda</p>
+    <div className="all-products"> 
+        {proizvodi
+            .map((p)=> <Kartica proizvod={p}></Kartica>)
+        }
+        
  
     </div>
   );
