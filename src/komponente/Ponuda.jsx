@@ -13,7 +13,9 @@ function Ponuda({proizvodi,onAdd,onRemove}) {
 
   return (
     <div>
+        <br /><br /><br />
         <button className="sortbtn btn" onClick={sortR}>Sortiraj rastuce</button>
+        <div>   </div>
         <button className="sortbtn btn" onClick={sortO}>Sortiraj opadajuce</button>
         <div className="all-products"> 
         {sort==true ? 

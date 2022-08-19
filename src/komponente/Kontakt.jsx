@@ -3,6 +3,8 @@ import React from "react";
 function Kontakt() {
   return (
     <div  >
+        <br />
+        <br /><br /><br /><br />
             <div className="wrapper centered">
         <article className="letter">
             <div className="side">

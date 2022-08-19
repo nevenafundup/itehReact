@@ -22,6 +22,7 @@ function Kartica({proizvod,onAdd,onRemove}) {
         >
         <BsPlusLg />
       </button>
+      <br />
       <button 
         className="btn"
         onClick={() => onRemove(  proizvod.id)}>
